@@ -1,0 +1,73 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+table{
+    width: 100%;
+}
+
+.search{
+    margin-right: auto;
+    border-bottom-color: white;
+}
+
+.container{
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.position-cell{
+    //min-width: 300px;
+    word-wrap: break-word;
+}
+
+.department-cell{
+    min-width: 300px;
+    word-wrap: break-word;
+    border-right: 1px solid lightgrey;
+}
+
+th.limit-cell{
+    text-align: center;
+}
+
+.limit-cell{
+    min-width: 100px;
+    max-width: 100px;
+    border-right: 1px solid lightgrey;
+}
+
+.cell-input-highlight{
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: gray;
+}
+
+.cell-input{
+    width: 100%;
+    border: none; 
+    outline: none;
+    background-color: transparent;
+    resize: none;
+    //color:#7f1e5e;
+    //color: #005486;
+    // font-weight: bold;
+    // font-size: 1rem;
+    // text-transform: uppercase;
+    // text-align: center;
+}
+
+.processing-limit-value{
+    font-style: italic;
+}

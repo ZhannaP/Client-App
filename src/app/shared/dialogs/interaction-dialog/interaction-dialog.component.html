@@ -1,0 +1,41 @@
+<div [ngSwitch]="data.attentionType">
+
+    <div *ngSwitchCase="attentionTypes.info" class="message-info" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <mat-icon class="message-icon">info</mat-icon>
+        <h2 mat-dialog-title>{{data.title}}</h2>
+    </div>
+
+    <div *ngSwitchCase="attentionTypes.warning" class="message-warning" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <mat-icon class="message-icon">warning</mat-icon>
+        <h2 mat-dialog-title>{{data.title}}</h2>
+    </div>
+
+    <div *ngSwitchCase="attentionTypes.danger" class="message-danger" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <mat-icon class="message-icon">error</mat-icon>
+        <h2 mat-dialog-title>{{data.title}}</h2>
+    </div>
+
+    <div *ngSwitchCase="attentionTypes.confirmation" class="message-confirmation" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <mat-icon class="message-icon">help</mat-icon>
+        <h2 mat-dialog-title>{{data.title}}</h2>
+    </div>
+
+    <!-- <h2 mat-dialog-title *ngSwitchCase="attentionTypes.info" class="message-info">{{data.title}}</h2> -->
+    <!-- <h2 mat-dialog-title *ngSwitchCase="attentionTypes.warning" class="message-warning">{{data.title}}</h2>
+    <h2 mat-dialog-title *ngSwitchCase="attentionTypes.danger" class="message-danger">{{data.title}}</h2>
+    <h2 mat-dialog-title *ngSwitchCase="attentionTypes.confirmation" class="message-icon-confirmation">{{data.title}}</h2> -->
+</div>
+
+<div mat-dialog-content >
+    <div [innerHTML]="message" style="font-size: 1.2rem; width: 100%;"></div>
+    <button *ngIf="details" mat-button color="primary" (click)="detailsVisible = !detailsVisible">Details</button>
+    <div *ngIf="details && detailsVisible" style="font-size: 0.8rem; width: 100%; max-height: 450px; overflow: auto; padding-left: 20px; padding-right: 20PX; box-sizing: border-box; background-color: #FEF5E7;">
+    <div [innerHTML]="details"></div>
+    </div>
+</div>
+
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
+    <button *ngIf="data.okButtonVisible" mat-raised-button color="primary" [mat-dialog-close]="1">{{data.okButtonText}}</button>
+    <button *ngIf="data.noButtonVisible" mat-raised-button color="accent" [mat-dialog-close]="2">{{data.noButtonText}}</button>
+    <button *ngIf="data.cancelButtonVisible" mat-raised-button color="warn" [mat-dialog-close]="3">{{data.cancelButtonText}}</button>
+</div>

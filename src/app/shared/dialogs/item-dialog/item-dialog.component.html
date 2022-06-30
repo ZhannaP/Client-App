@@ -1,0 +1,31 @@
+<div class="position">
+    <div class="example-container">
+        <div [formGroup]="form">
+            <p>
+                <mat-form-field appearance="fill" class="input">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill" class="input">
+                    <mat-label>Description</mat-label>
+                    <input matInput formControlName="description">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill" class="input">
+                    <mat-label>Boost</mat-label>
+                    <input matInput formControlName="boost">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <button mat-raised-button class="button-position" (click)="submit()" style="background-color: #5DADE2; color: white;">Submit</button>
+                <button mat-raised-button color="warn" [disabled]="disableButtons" [mat-dialog-close]="null" style="margin-left: 10px;">Cancel</button>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div  fxFlexFill fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px" style="overflow: hidden"> 
+
+    <div fxFlex="75px" fxLayout="row" fxLayoutAlign="start center" class="page-header mat-elevation-z2">
+        <span class="page-title">Tournaments</span>
+    </div>
+
+    <div class="search">
+        <mat-icon matSuffix class="position-navbar">search</mat-icon>
+        <input matInput placeholder="Search..." #input type="search" (keyup)="search($event)">
+        <button class="button-position" mat-raised-button (click)="openCreateDialog()" color="primary" style="color: white; float: right; margin-left: 10px;">Add new Tournament</button>
+    </div>
+
+    <div fxFlex fxLayout="column" fxLayoutAlign="start start" style="width: 100%; overflow: hidden;">
+        <div style="width: 100%; overflow: auto;">
+            <div style="min-width: 100%; background-color: #fff;">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef class="position-cell">No.</th>
+                        <td mat-cell *matCellDef="let element" class="position-cell">
+                            <div>{{element.id}}</div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef class="position-cell">Name</th>
+                        <td mat-cell *matCellDef="let element" class="position-cell">
+                            <div>{{element.name}}</div>
+                        </td>
+                    </ng-container>
+
+                    <!-- <ng-container matColumnDef="registrationTime">
+                        <th mat-header-cell *matHeaderCellDef class="position-cell">Registration Time</th>
+                        <td mat-cell *matCellDef="let element" class="position-cell">
+                            <div>{{element.registrationTime}}</div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="startTime">
+                        <th mat-header-cell *matHeaderCellDef class="position-cell">Name</th>
+                        <td mat-cell *matCellDef="let element" class="position-cell">
+                            <div>{{element.startTime}}</div>
+                        </td>
+                    </ng-container> -->
+
+                    <!-- <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef class="position-cell">Name</th>
+                        <td mat-cell *matCellDef="let element" class="position-cell">
+                            <div>{{element.cancalled}}</div>
+                        </td>
+                    </ng-container> -->
+
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef class="position-cell" style="width: 100px !important;">Actions</th>
+                        <td mat-cell *matCellDef="let element" class="position-cell" style="width: 100px !important;">
+                            <button mat-icon-button class="orange" (click)="edit(element)">
+                                <mat-icon class="button-size">edit</mat-icon>
+                            </button>
+                            <button mat-icon-button class="red" (click)="deleteTournament(element)">
+                                <mat-icon class="button-size">delete</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

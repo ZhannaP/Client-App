@@ -1,0 +1,29 @@
+<div fxFlexFill fxLayout="column">
+    <div fxFlex="none">
+        <mat-toolbar color="primary">
+            <img src="assets/logo.png" style="width: 40px; height: 40px; margin-bottom: 10px;">
+            <a class="logo logo-styles">egue of Legends</a>
+
+            <!-- <mat-nav-list class="position-navbar">
+                <span class="example-spacer"></span>  
+            </mat-nav-list> -->
+        
+            
+            <span class="spacer"></span>
+
+        
+            <mat-nav-list  fxLayout="row" style="line-height: normal;"> 
+                <a mat-list-item [routerLink]="[chempions]">Chempions</a>
+                <a mat-list-item [routerLink]="[items]">Items</a>
+                <a mat-list-item [routerLink]="[teams]">Teams</a>
+                <a mat-list-item [routerLink]="[tournaments]">Tournaments</a>
+            </mat-nav-list>
+        
+            
+        </mat-toolbar>
+    </div>
+
+    <div fxFlex style="overflow: hidden; background-color: #F8F9F9;">
+        <router-outlet></router-outlet>
+    </div>
+</div>
